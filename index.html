@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sycamore Technologies -- Home Page</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -508,30 +508,152 @@
 
     .footer-copy a { color: #0000AA; text-decoration: none; }
     .footer-copy a:hover { text-decoration: underline; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 680px) {
+
+      /* Nav wraps and scrolls */
+      .nav-secondary {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-secondary a {
+        padding: 8px 12px;
+        white-space: nowrap;
+        border-right: 1px solid #DDDDDD;
+        font-size: 12px;
+      }
+
+      /* Stack the 3 columns */
+      .main-layout {
+        flex-direction: column;
+      }
+
+      .sidebar-left,
+      .sidebar-right {
+        width: 100%;
+      }
+
+      /* Hero stacks vertically */
+      .hero {
+        flex-direction: column;
+        padding: 20px 16px;
+        min-height: unset;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .hero-image-area {
+        flex: unset;
+      }
+
+      .hero-image-area svg {
+        width: 180px;
+        height: 146px;
+      }
+
+      .hero-text {
+        padding-left: 0;
+      }
+
+      .hero-headline {
+        font-size: 22px;
+      }
+
+      .hero-subline {
+        font-size: 12px;
+      }
+
+      /* Hot news bar wraps */
+      .hot-news-bar {
+        flex-wrap: wrap;
+      }
+
+      .hot-news-date {
+        margin-left: 0;
+        padding: 4px 12px 6px;
+        width: 100%;
+        border-top: 1px solid #EEEEEE;
+      }
+
+      /* Product grid goes 2 columns then 1 */
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-tile {
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      .product-tile:nth-child(odd) {
+        border-right: 1px solid #DDDDDD;
+      }
+
+      .product-tile:nth-child(even) {
+        border-right: none;
+      }
+
+      /* News items */
+      .news-item {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .news-date {
+        min-width: unset;
+      }
+
+      /* Badges wrap */
+      .badge-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      /* Footer links wrap */
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 12px;
+      }
+
+      .footer-links a { margin: 0 4px; }
+
+      .page-wrapper {
+        padding: 8px 6px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-tile {
+        border-right: none !important;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- TOP NAV TABS -->
-  <div class="nav-tabs">
-    <a class="nav-tab active" href="#">🌳</a>
-    <a class="nav-tab" href="#">Store</a>
-    <a class="nav-tab" href="#">iTools</a>
-    <a class="nav-tab" href="#">Solutions</a>
-    <a class="nav-tab" href="#">QuickNet</a>
-    <a class="nav-tab" href="#">Support</a>
-    <a class="nav-tab" href="#">SycaOS X</a>
-  </div>
-
   <!-- SECONDARY NAV -->
   <div class="nav-secondary">
-    <a href="#">Hot News</a>
+    <a href="#">News</a>
     <a href="#">Hardware</a>
     <a href="#">Software</a>
-    <a href="#">Made4Biz</a>
+    <a href="#">Business</a>
     <a href="#">Education</a>
-    <a href="#">Creative</a>
-    <a href="#">Enterprise</a>
+    <a href="#">Support</a>
+    <a href="#">Downloads</a>
     <a href="#">Developer</a>
     <a href="#">Where to Buy</a>
   </div>
@@ -616,8 +738,8 @@
               <text x="65" y="57" font-family="Courier New" font-size="5.5" fill="#00FF88" opacity="0.9">C:\SYCA&gt; boot v4.2</text>
               <text x="65" y="67" font-family="Courier New" font-size="5.5" fill="#00FF88" opacity="0.7">Loading SycaOS...</text>
               <text x="65" y="77" font-family="Courier New" font-size="5.5" fill="#00FF88" opacity="0.6">Memory: 512MB OK</text>
-              <text x="65" y="87" font-family="Courier New" font-size="5.5" fill="#00FF88" opacity="0.5">Network: online</text>
-              <text x="65" y="97" font-family="Courier New" font-size="5.5" fill="#FFFFFF" opacity="0.9">█ Ready_</text>
+              <text x="65" y="87" font-family="Courier New" font-size="5.5" fill="#00FF88" opacity="0.5">Network: 100BaseT</text>
+              <text x="65" y="97" font-family="Courier New" font-size="5.5" fill="#FFFFFF" opacity="0.9">█ System ready_</text>
               <!-- Glare -->
               <ellipse cx="86" cy="57" rx="22" ry="11" fill="url(#glowG)" transform="rotate(-18,86,57)" />
               <!-- Drive slot -->
@@ -633,15 +755,15 @@
           </div>
           <div class="hero-text">
             <div class="hero-headline">Sick of Waiting?<br>Sick of Being Behind?<br><em>Sycamore.</em></div>
-            <div class="hero-subline">The new SycaCore 9000.<br>With SycaOS X + 100BaseT built in.</div>
+            <div class="hero-subline">The new SycaCore 9000.<br>64-bit processing. 100BaseT networking. Built for what's next.</div>
           </div>
         </div>
 
         <!-- HOT NEWS BAR -->
         <div class="hot-news-bar">
-          <div class="hot-news-label">Hot News</div>
+          <div class="hot-news-label">Latest News</div>
           <div class="hot-news-text">
-            SycaCore 9000 Now Ships with SycaOS X Pre-installed. <a href="#">Learn more.</a>
+            SycaCore 9000 now available with SycaOS pre-installed. <a href="#">Read more.</a>
           </div>
           <div class="hot-news-date">11/04/1996 9:00 AM</div>
         </div>
@@ -651,26 +773,26 @@
           <div class="product-tile">
             <span class="product-tile-icon">💾</span>
             <div class="product-tile-headline">Download SycaOS v4.2</div>
-            <div class="product-tile-body">New update with support for 30+ third-party network adapters.</div>
-            <div class="product-tile-sub">Now available free.</div>
+            <div class="product-tile-body">Free update. Improved performance, ISDN support, and 30+ new driver packages.</div>
+            <div class="product-tile-sub">Available now.</div>
           </div>
           <div class="product-tile">
             <span class="product-tile-icon">🖥️</span>
             <div class="product-tile-headline">SycaCore 9000</div>
-            <div class="product-tile-body">200MHz · 512MB RAM · SCSI-II<br><a href="#">Pre-order today.</a></div>
+            <div class="product-tile-body">200MHz · 512MB RAM · SCSI-II · 100BaseT<br><a href="#">Order today.</a></div>
             <div class="product-tile-sub">Ships March 24th.</div>
           </div>
           <div class="product-tile">
             <span class="product-tile-icon">🌐</span>
             <div class="product-tile-headline">SycaNET Pro</div>
-            <div class="product-tile-body">Enterprise 100BaseT LAN/WAN. Fully managed switching fabric.</div>
+            <div class="product-tile-body">Enterprise LAN/WAN solutions. 100BaseT switching fabric for businesses of any size.</div>
             <div class="product-tile-sub"><a href="#">Learn more.</a></div>
           </div>
           <div class="product-tile">
             <span class="product-tile-icon">📡</span>
-            <div class="product-tile-headline">Power to connect.</div>
-            <div class="product-tile-body">SycaLink 56K modem with fax — now shipping.</div>
-            <div class="product-tile-sub">733MHz upgrade available.</div>
+            <div class="product-tile-headline">SycaLink Modem</div>
+            <div class="product-tile-body">56Kbps V.90 with integrated fax support. Works with all major internet providers.</div>
+            <div class="product-tile-sub">Now shipping.</div>
           </div>
         </div>
 
@@ -680,7 +802,7 @@
           <div class="news-list">
             <div class="news-item">
               <span class="news-date">11/04/1996</span>
-              <span><span class="new-badge">NEW</span><a href="#">SycaOS v4.2 released</a> — improved memory management and ISDN support.</span>
+              <span><span class="new-badge">NEW</span><a href="#">SycaOS v4.2 released</a> — improved memory management, ISDN support, and expanded driver library.</span>
             </div>
             <div class="news-item">
               <span class="news-date">10/22/1996</span>
@@ -688,15 +810,15 @@
             </div>
             <div class="news-item">
               <span class="news-date">10/15/1996</span>
-              <span>New <a href="#">SycaCore 9000 Technical Specifications</a> available for download (2.1 MB ZIP).</span>
+              <span>Full <a href="#">SycaCore 9000 Technical Specifications</a> document now available for download (2.1 MB ZIP).</span>
             </div>
             <div class="news-item">
               <span class="news-date">09/30/1996</span>
-              <span>Partnership announced with <strong>NetVision Communications</strong> for enterprise networking.</span>
+              <span>Sycamore Technologies announces strategic partnership with <strong>NetVision Communications</strong>.</span>
             </div>
             <div class="news-item">
               <span class="news-date">09/12/1996</span>
-              <span>Join us at <strong>COMDEX Fall '96</strong> in Las Vegas, Nov 18–22. Booth #4471, South Hall.</span>
+              <span>Visit us at <strong>COMDEX Fall '96</strong> in Las Vegas, Nov 18–22. Booth #4471, South Hall.</span>
             </div>
           </div>
         </div>
