@@ -10,7 +10,7 @@
     html, body {
       width: 100%;
       min-height: 100%;
-      background-color: #F8F0CC;
+      background-color: #000000;
     }
 
     body {
@@ -48,7 +48,23 @@
 </head>
 <body>
   <div class="video-wrapper">
-    <video autoplay controls playsinline>
+    <div id="play-screen" style="display:flex; align-items:center; justify-content:center;">
+      <button id="play-btn" onclick="document.getElementById('play-screen').style.display='none'; var v=document.getElementById('video'); v.style.display='block'; v.play();" style="
+        font-family: Arial Black, Arial, sans-serif;
+        font-size: 28px;
+        color: #111111;
+        background: #D4D0C8;
+        border-top: 3px solid #FFFFFF;
+        border-left: 3px solid #FFFFFF;
+        border-right: 3px solid #444444;
+        border-bottom: 3px solid #444444;
+        outline: 2px solid #000000;
+        padding: 10px 32px;
+        cursor: pointer;
+        line-height: 1;
+      ">▶</button>
+    </div>
+    <video id="video" controls playsinline style="display:none;">
       <source src="sycamore_technologies.mp4" type="video/mp4">
     </video>
   </div>
