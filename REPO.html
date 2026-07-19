@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank HTML5 Template</title>
+  <style>
+    body{ 
+        min-height: 10vh; 
+        background-image: linear-gradient(to bottom, rgb(5, 255, 5), black);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+        
+    }
+    
+    @keyframes shake {
+  0%   { transform: scale(1.15) rotate(0deg); }
+  25%  { transform: scale(1.15) rotate(-10deg); }
+  50%  { transform: scale(1.15) rotate(10deg); }
+  75%  { transform: scale(1.15) rotate(-10deg); }
+  100% { transform: scale(1.15) rotate(0deg); }
+}
+    #little_budy{
+        position: fixed;
+        bottom: 1vh;
+        left: 1vh;
+        width: auto;
+        height: 15%;
+    }
+    #little_budy:hover {
+  transform: scale(1.15); /* 1.15 = 15% bigger, adjust as needed */
+    }   
+  #little_budy.shake {
+    animation: shake 0.4s ease;
+    }
+  </style>
+    
+</head>
+<body>
+    
+    
+<img src="Little_Buddy.png" alt="little_GUY" id="little_budy">
+
+
+<script>
+      const character = document.getElementById('little_budy');
+      
+      character.addEventListener('click', () => { 
+        character.classList.add('shake');
+        character.addEventListener('animationend', () => {
+          character.classList.remove('shake');
+        }, { once: true });
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = character.src;
+        link.download = 'Little_Buddy.png'; // filename the user will get
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+</body>
+</html>
