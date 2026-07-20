@@ -34,14 +34,14 @@
         height: 15%;
     }
     #little_budy:hover {
-  transform: scale(1.15); /* 1.15 = 15% bigger, adjust as needed */
+  transform: scale(1.15); 
     }   
   #little_budy.shake {
     animation: shake 0.4s ease;
     }
   .header{ 
        display: flex;
-        justify-content: center; /* Centers horizontally */
+        justify-content: center; 
             align-items: center;  
        
     }
@@ -78,7 +78,7 @@
         // Trigger download
         const link = document.createElement('a');
         link.href = character.src;
-        link.download = 'Little_Buddy.png'; // filename the user will get
+        link.download = 'Little_Buddy.png'; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
