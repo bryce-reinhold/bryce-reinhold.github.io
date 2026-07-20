@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blank HTML5 Template</title>
   <style>
+    * {
+        box-sizing: border-box;
+    }
+
     #gradient{ 
         position: fixed;
         top: 0;
@@ -45,7 +49,7 @@
         left: 1vh;
         width: auto;
         height: 15%;
-        filter: drop-shadow(0 0 3em rgba(0, 255, 251, 0.6));
+        filter: drop-shadow(0 0 3wv rgba(0, 255, 251, 0.6));
     }
     #little_budy:hover {
   transform: scale(1.15); 
@@ -80,6 +84,38 @@
          z-index: -2;
     
     }
+    div.outlined_box{
+        display: flex;
+        justify-content: flex-start; 
+        flex-wrap: wrap;
+         align-items: center; 
+        border-style: solid;
+        border-color: aqua;
+         max-width: 70dvw;
+        margin: 20rem auto 0 auto; 
+        gap: 10px;
+        padding: 1rem;
+
+    }
+    div.gallery-item { 
+        
+        border: 1px solid #ccc;
+        width: calc(33.333% - 7px);
+        
+    }
+    div.gallery-item img{
+        width: 100%;
+        height: auto;
+        display: block; 
+    }
+@media only screen and (max-width: 768px) {
+  div.gallery-item {
+    width: 100%; 
+  }
+}
+
+
+
     @keyframes HeComin {
      from { transform: scale(1); }
     to   { transform: scale(20); }
@@ -91,13 +127,23 @@
 <body>
 
 <div id="gradient">
-<div class="center">
-    
-    <img src="REPO_Logo.webp" alt="REPO Title" id="logo">
-    
+    <div class="center">
+        <img src="REPO_Logo.webp" alt="REPO Title" id="logo">
+    </div>  
 </div>
 
+<div class="outlined_box">
+    <div class="gallery-item">
+        <img src="repo_one.jpg" alt="picture one">
+    </div>
+    <div class="gallery-item">
+        <img src="repo_two.jpg" alt="picture one">
+    </div>
+    <div class="gallery-item">
+        <img src="repo_three.jpg" alt="picture one">
+    </div>
 </div>
+
 <div class="complete_center">
     <img src="Rugrat.webp" alt="DaBaby" class="baybeh">
 </div>
