@@ -40,21 +40,29 @@
   #little_budy.shake {
     animation: shake 0.4s ease;
     }
-  .header{ 
-       display: flex;
-        justify-content: center; 
-            align-items: center;  
+  .center{ 
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
        
     }
-    .header img{ 
-        max-width: 100%;
-    width: 40vw;
-    height: auto;
+    .complete_center{
+        display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
     }
+
     #logo{ 
           width: 40vw;     
     
-    height: auto;
+         height: auto;
+    }
+    .baybeh{ 
+       width: 5vw;    
+    
+         height: auto
+    
     }
   </style>
     
@@ -62,14 +70,23 @@
 
 <body>
 <div id="gradient">
-<div class="header">
-    <img src="REPO_Logo.webp" alt="REPO Title" id="logo" id="logo">
-</div>
-</div>
+<div class="center">
     
+    <img src="REPO_Logo.webp" alt="REPO Title" id="logo">
+    
+</div>
+
+</div>
+<div class="complete_center">
+    <img src="Rugrat.webp" alt="DaBaby" class="baybeh">
+</div>
+
+
 <div>
     <img src="Little_Buddy.png" alt="little_GUY" id="little_budy">
 </div>
+    
+
 
 
 
