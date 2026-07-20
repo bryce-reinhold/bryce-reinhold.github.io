@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank HTML5 Template</title>
+    <title>REPO</title>
   <style>
     #gradient{ 
         position: fixed;
@@ -34,20 +34,22 @@
         height: 15%;
     }
     #little_budy:hover {
-  transform: scale(1.15); 
+  transform: scale(1.15); /* 1.15 = 15% bigger, adjust as needed */
     }   
   #little_budy.shake {
     animation: shake 0.4s ease;
     }
   .header{ 
        display: flex;
-        justify-content: center; 
+        justify-content: center; /* Centers horizontally */
             align-items: center;  
        
     }
     #logo{ 
         height: 25vh;
         width: auto;
+        max-width: 90vh;
+        max-height: 25vh;
     }
   </style>
     
@@ -76,7 +78,7 @@
         // Trigger download
         const link = document.createElement('a');
         link.href = character.src;
-        link.download = 'Little_Buddy.png'; 
+        link.download = 'Little_Buddy.png'; // filename the user will get
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
