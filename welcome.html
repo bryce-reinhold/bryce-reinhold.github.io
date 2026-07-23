@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+body{ 
+        background-image: url(images/Clouds.gif);
+        
+        
+    }
+
+.complete_center{
+        display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    }
+    .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+#mainContent {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website Title</title>
+    
+
+</head>
+<body>
+    <div id="startScreen" style="position: absolute; top: 20px; right: 20px; text-align: center; z-index: 1000;">
+    <img src="images/play.gif" alt="Play" style="width: 60px;">
+    <p style="font-family:'Brush Script MT', cursive; margin: 4px 0 0 0; font-size: 40px;">click me</p>
+</div>
+    <audio id="bgm" src="images/song.wav" loop></audio>
+<script>
+document.getElementById('startScreen').addEventListener('click', () => {
+    document.getElementById('bgm').play();
+    document.getElementById('mainContent').style.opacity = '1';
+});
+</script>
+
+    <div id="mainContent">
+        <div class="completecenter">
+            <img src="images/joinus.jpeg" alt="">
+        </div>
+        <div class="center">
+            <h1 style="font-family:'Brush Script MT', cursive; font-size: 70px; margin-left: 300px; margin-right: 300px;"> Come Join the Family</h1>
+        </div>
+
+
+        <div class="center">
+            <img src="images/manosu.gif" alt="Rotated Image" style="transform: rotate(180deg);">
+            <img src="images/happy1.jpg" alt="" style="width: 30dvw; margin-left: 400px; margin-right: 400px;" height="auto">
+            <img src="images/manodx.gif" alt="Rotated Image" style="transform: rotate(90deg);">
+        </div>
+        <div class="center">
+            <img src="images/happy2.jpg" alt="" style="width: 25dvw;" height="auto">
+        </div>
+        <div class="center">
+            <img src="images/happy5.jpg" alt="" style="width: 20dvw;" height="auto" >
+        </div>
+
+        <div class="center">
+            <h1 style="font-family:'Brush Script MT', cursive; font-size: 60px; margin-left: 300px; margin-right: 300px;"> A Happy Place, For Happy People</h1>
+        </div>
+
+
+        <div style="height: 100px;">
+
+        </div>
+    </div>
+
+  
+</body>
+</html>
