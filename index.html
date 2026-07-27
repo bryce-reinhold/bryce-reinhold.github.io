@@ -13,7 +13,9 @@ body{
 }
 .content{
     background-image: url("images/brusirutan.gif") ;
-    
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
     
 }
 .content .image-box { 
@@ -21,6 +23,7 @@ body{
     place-items: center;
     min-height: 50dvh;
     overflow: hidden;
+    flex: 1;
 }
 .content img{
    object-fit: contain;
@@ -166,7 +169,7 @@ nav ul {
   <div class="ads">
     <a href="#"><img src="images/sancord.gif" alt="Home"></a>
   </div>
-  <footer class="footer">The footer</footer>
+  <footer class="footer"></footer>
 </div>
 
 </body>
