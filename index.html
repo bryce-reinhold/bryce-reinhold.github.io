@@ -57,17 +57,26 @@ body{
 }
 .nav{
     background-image: url("images/agbk.gif");
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    overflow: hidden;
+    white-space: nowrap;
     
 }
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav .scroller{ 
+    display: inline-flex;
+    width: max-content;
+    font-family: 'Courier New', monospace, bold;
+    animation: scroll 12s linear infinite;
 }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .sidebar{ 
     background-image: url("images/clouds4.jpg");
 }
@@ -127,7 +136,10 @@ nav ul {
 }
 
 @media (min-width: 768px) {
-    
+     .nav .scroller {
+    display: none;
+  }
+
   .nav {
     grid-column: col-start / span 2;
     grid-row: 2 / 4;
@@ -162,10 +174,7 @@ nav ul {
     <a href="#" class="menu-btn"><img src="images/epicture.gif" alt="Home"></a>
   </header>
   <nav class="nav">
-    <img src="images/technolo.gif" alt="">
-    <img src="images/servicew.gif" alt="">
-    <img src="images/performa.gif" alt="">
-    <img src="images/dedicati.gif" alt="">
+   <div class="scroller"> YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT ! YOU FOUND IT !</div>
   </nav>
   <div class="content">
     <div class="image-box">
